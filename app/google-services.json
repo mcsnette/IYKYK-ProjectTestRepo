@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "111503129371",
+    "project_id": "iykyk-project",
+    "storage_bucket": "iykyk-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:111503129371:android:1145c9edb355751637b1be",
+        "android_client_info": {
+          "package_name": "com.example.iykyk_project"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAQfFVCd2ADVpRYbJV4dEWFOvkV-sZ9tmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
