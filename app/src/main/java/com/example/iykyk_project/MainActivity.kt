@@ -8,11 +8,9 @@ import android.widget.TextView
 import android.widget.Toast
 import com.example.iykyk_project.databinding.ActivityMainBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+
 
 class MainActivity : AppCompatActivity() {
 
@@ -52,7 +50,7 @@ class MainActivity : AppCompatActivity() {
         binding.loginBtn.setOnClickListener(){
             //variables from Register Page
             val LoginUsername = binding.UsernameTxt.text.toString()
-            var LoginPassword= binding.PasswordTxt.text.toString()
+            val LoginPassword= binding.PasswordTxt.text.toString()
 
 
             if (LoginUsername.isNotEmpty() && LoginPassword.isNotEmpty()) {
@@ -62,7 +60,7 @@ class MainActivity : AppCompatActivity() {
                         val intent = Intent(this, Homepage_Activity::class.java)
                         startActivity(intent)
                     } else {
-                        Toast.makeText(this, it.exception.toString(), Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "HAHAHAHA MALI CREDENTIALS", Toast.LENGTH_SHORT).show()
                     }
             }
 

@@ -3,17 +3,13 @@ package com.example.iykyk_project
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Button
-import android.widget.EditText
 import android.widget.ImageView
 import android.widget.Toast
 import com.example.iykyk_project.databinding.ActivityRegisterBinding
 import com.google.firebase.auth.FirebaseAuth
-import com.google.firebase.database.DataSnapshot
-import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
-import com.google.firebase.database.ValueEventListener
+
 
 class Register_Activity : AppCompatActivity() {
 
@@ -41,14 +37,15 @@ class Register_Activity : AppCompatActivity() {
         binding.RegBtn.setOnClickListener(){
             //variables from Register Page
             val RegEmail = binding.RegEmailTxt.text.toString()
-            var RegUsername= binding.RegUsernameTxt.text.toString()
-            var RegPassword= binding.RegPwordTxt.text.toString()
+            val RegUsername= binding.RegUsernameTxt.text.toString()
+            val RegPassword= binding.RegPwordTxt.text.toString()
 
 
             if (RegEmail.isNotEmpty() && RegPassword.isNotEmpty() && RegUsername.isNotEmpty()) {
               //registerUser(RegEmail,RegUsername,RegPassword)
                 firebaseAuth.createUserWithEmailAndPassword(RegEmail, RegPassword).addOnCompleteListener{
                     if (it.isSuccessful){
+                        Toast.makeText(this, "Account has been created!!!", Toast.LENGTH_SHORT).show()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
@@ -78,7 +75,7 @@ class Register_Activity : AppCompatActivity() {
 
     }
 
-    private fun registerUser(email: String, username: String, password: String) {
+    /*private fun registerUser(email: String, username: String, password: String) {
         databaseReference.orderByChild("username").equalTo(username)
             .addListenerForSingleValueEvent(object : ValueEventListener {
                 override fun onDataChange(dataSnapshot: DataSnapshot) {
@@ -101,7 +98,7 @@ class Register_Activity : AppCompatActivity() {
                 }
             })
 
-    }
+    }*/
 }
 
 
