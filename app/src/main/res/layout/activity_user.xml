@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_home"
-    tools:context=".Homepage_Activity">
+    android:background="@drawable/bg_slam"
+    tools:context=".User_Activity">
 
 
     <ImageView
@@ -22,16 +21,18 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageView
-        android:id="@+id/slamCollect"
-        android:layout_width="328dp"
-        android:layout_height="231dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="372dp"
-        android:src="@drawable/custom_shape_white"
+
+    <TextView
+        android:id="@+id/passUsername"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="200dp"
+        android:fontFamily="@font/gotham"
+        android:text="username"
+        android:textColor="#000000"
+        android:textSize="26sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
+        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -73,19 +74,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <TextView
-        android:id="@+id/txtSlamCollection"
-        android:layout_width="200dp"
-        android:layout_height="112dp"
-        android:layout_marginTop="434dp"
-        android:fontFamily="@font/gotham"
-        android:gravity="center"
-        android:text="Slambook\nCollection"
-        android:lineSpacingExtra="9dp"
-        android:textColor="#000000"
-        android:textSize="30sp"
+    <Button
+        android:id="@+id/logoutBtn"
+        android:layout_width="195dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="536dp"
+        android:background="@drawable/custom_btn"
+        android:fontFamily="@font/sanchez"
+        android:padding="9dp"
+        android:text="Logout"
+        android:textAlignment="center"
+        android:textAllCaps="false"
+        android:textColor="#000"
+        android:textSize="18sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

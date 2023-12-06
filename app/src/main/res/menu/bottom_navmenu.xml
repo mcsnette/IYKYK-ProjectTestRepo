@@ -8,7 +8,7 @@
 
     <item
         android:id="@+id/slam"
-        android:icon="@drawable/baseline_add_home_24"
+        android:icon="@drawable/baseline_note_add_24"
         android:title="Slam" />
     <item
         android:id="@+id/user"
