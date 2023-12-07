@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "111503129371",
+    "firebase_url": "https://iykyk-project-default-rtdb.asia-southeast1.firebasedatabase.app",
     "project_id": "iykyk-project",
     "storage_bucket": "iykyk-project.appspot.com"
   },

@@ -5,25 +5,15 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 
-class Homepage_Activity : AppCompatActivity() {
+class SlamCollection_Activity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_homepage)
-
-
-
-        val slamCollect: ImageView = findViewById(R.id.slamCollect)
-
-        slamCollect.setOnClickListener {
-            val intent = Intent(this@Homepage_Activity, Slam_Activity::class.java)
-
-            startActivity(intent)
-        }
+        setContentView(R.layout.activity_slam_collection)
 
         val addImg: ImageView = findViewById(R.id.navCreate)
 
         addImg.setOnClickListener {
-            val intent = Intent(this@Homepage_Activity, Slam_Activity::class.java)
+            val intent = Intent(this@SlamCollection_Activity, Slam_Activity::class.java)
 
             startActivity(intent)
         }
@@ -32,7 +22,7 @@ class Homepage_Activity : AppCompatActivity() {
         val gotoUser: ImageView = findViewById(R.id.navUser)
 
         gotoUser.setOnClickListener {
-            val intent = Intent(this@Homepage_Activity, User_Activity::class.java)
+            val intent = Intent(this@SlamCollection_Activity, User_Activity::class.java)
 
             startActivity(intent)
         }
@@ -40,7 +30,7 @@ class Homepage_Activity : AppCompatActivity() {
         val gotoHome: ImageView = findViewById(R.id.navHome)
 
         gotoHome.setOnClickListener {
-            val intent = Intent(this@Homepage_Activity, Homepage_Activity::class.java)
+            val intent = Intent(this@SlamCollection_Activity, Homepage_Activity::class.java)
 
             startActivity(intent)
         }

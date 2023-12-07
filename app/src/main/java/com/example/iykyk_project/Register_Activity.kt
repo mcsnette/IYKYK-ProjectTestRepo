@@ -19,7 +19,8 @@ class Register_Activity : AppCompatActivity() {
     //Firebase Authentication
     private lateinit var firebaseAuth: FirebaseAuth
     private lateinit var firebaseDatabase: FirebaseDatabase
-    private lateinit var databaseReference: DatabaseReference
+    //private lateinit var databaseReference: DatabaseReference
+    private lateinit var DbRef: DatabaseReference
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -28,7 +29,8 @@ class Register_Activity : AppCompatActivity() {
 
         //for database interaction
         firebaseDatabase = FirebaseDatabase.getInstance()
-        databaseReference = firebaseDatabase.reference.child("Users")
+        //databaseReference = firebaseDatabase.reference.child("Users")
+        DbRef = FirebaseDatabase.getInstance().getReference("Users")
 
         //for authentication using firebase for register page| initializing
         firebaseAuth = FirebaseAuth.getInstance()
@@ -43,9 +45,10 @@ class Register_Activity : AppCompatActivity() {
 
             if (RegEmail.isNotEmpty() && RegPassword.isNotEmpty() && RegUsername.isNotEmpty()) {
               //registerUser(RegEmail,RegUsername,RegPassword)
+
                 firebaseAuth.createUserWithEmailAndPassword(RegEmail, RegPassword).addOnCompleteListener{
                     if (it.isSuccessful){
-                        Toast.makeText(this, "Account has been created!!!", Toast.LENGTH_SHORT).show()
+                        saveUserData()
                         val intent = Intent(this, MainActivity::class.java)
                         startActivity(intent)
                     } else {
@@ -71,6 +74,32 @@ class Register_Activity : AppCompatActivity() {
 
 
 
+
+
+    }
+
+    private fun saveUserData() {
+        val RegEmail = binding.RegEmailTxt.text.toString()
+        val RegUsername= binding.RegUsernameTxt.text.toString()
+        val RegPassword= binding.RegPwordTxt.text.toString()
+
+        //create unique ID
+        val RegUserID = DbRef.push().key!!
+
+        if (RegEmail.isEmpty() || RegPassword.isEmpty() || RegUsername.isEmpty()){
+            Toast.makeText(this@Register_Activity, "Boi, complete the damn form! >:(",Toast.LENGTH_SHORT).show()
+        }
+
+        val User = UserData(RegUserID,RegEmail,RegUsername,RegPassword)
+
+        DbRef.child(RegUserID).setValue(User)
+            .addOnCompleteListener(){
+                Toast.makeText(this@Register_Activity, "hooray! you have an account!",Toast.LENGTH_SHORT).show()
+            }
+
+            .addOnFailureListener {
+                Toast.makeText(this@Register_Activity, "Oops, There is an error on our end mb",Toast.LENGTH_SHORT).show()
+            }
 
 
     }
