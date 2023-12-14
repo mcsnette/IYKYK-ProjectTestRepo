@@ -15,7 +15,7 @@ class Homepage_Activity : AppCompatActivity() {
         val slamCollect: ImageView = findViewById(R.id.slamCollect)
 
         slamCollect.setOnClickListener {
-            val intent = Intent(this@Homepage_Activity, Slam_Activity::class.java)
+            val intent = Intent(this@Homepage_Activity, SlamCollection_Activity::class.java)
 
             startActivity(intent)
         }
