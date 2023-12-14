@@ -7,6 +7,7 @@ import android.widget.Button
 import android.widget.ImageView
 //import com.example.iykyk_project.databinding.ActivityRegisterBinding
 import com.example.iykyk_project.databinding.ActivityUserBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.auth.FirebaseAuth
 
 class User_Activity : AppCompatActivity() {
@@ -23,31 +24,30 @@ class User_Activity : AppCompatActivity() {
 
 
 
-        val LogoutBtn = findViewById<Button>(R.id.logoutBtn)
-        LogoutBtn.setOnClickListener {
-            val intent = Intent(this@User_Activity, MainActivity::class.java)
-            startActivity(intent)
-        }
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    val intent = Intent(this@User_Activity, Homepage_Activity::class.java)
+                    startActivity(intent)
+                }
+                R.id.create -> {
+                    val intent = Intent(this@User_Activity, Slam_Activity::class.java)
+                    startActivity(intent)
+                }
+                R.id.user -> {
+                    if (this@User_Activity is User_Activity) {
+                        // If the current activity is User_Activity, do nothing
+                        false
+                    } else {
+                        val intent = Intent(this@User_Activity, User_Activity::class.java)
+                        startActivity(intent)
+                        true
+                    }
+                }
 
-        //navbar redirection
-        val addImg: ImageView = findViewById(R.id.navCreate)
-        addImg.setOnClickListener {
-            val intent = Intent(this@User_Activity, Slam_Activity::class.java)
-
-            startActivity(intent)
-        }
-
-        val gotoUser: ImageView = findViewById(R.id.navUser)
-        gotoUser.setOnClickListener {
-            val intent = Intent(this@User_Activity, User_Activity::class.java)
-            startActivity(intent)
-        }
-
-        val gotoHome: ImageView = findViewById(R.id.navHome)
-        gotoHome.setOnClickListener {
-            val intent = Intent(this@User_Activity, Homepage_Activity::class.java)
-
-            startActivity(intent)
+            }
+            true
         }
     }
 
