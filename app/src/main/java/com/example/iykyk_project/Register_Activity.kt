@@ -84,7 +84,10 @@ class Register_Activity : AppCompatActivity() {
         val RegPassword= binding.RegPwordTxt.text.toString()
 
         //create unique ID
-        val RegUserID = DbRef.push().key!!
+        //val RegUserID = DbRef.push().key
+        //val RegFinalUserID = RegUserID.toString()
+
+        val RegUserID = firebaseAuth.currentUser?.uid.toString()
 
         if (RegEmail.isEmpty() || RegPassword.isEmpty() || RegUsername.isEmpty()){
             Toast.makeText(this@Register_Activity, "Boi, complete the damn form! >:(",Toast.LENGTH_SHORT).show()
@@ -98,9 +101,8 @@ class Register_Activity : AppCompatActivity() {
             }
 
             .addOnFailureListener {
-                Toast.makeText(this@Register_Activity, "Oops, There is an error on our end mb",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Register_Activity, "Oops, There is an error on our end mb hehe",Toast.LENGTH_SHORT).show()
             }
-
 
     }
 
