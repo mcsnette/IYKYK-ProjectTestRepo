@@ -10,30 +10,12 @@ class SlamCollection_Activity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_slam_collection)
 
-        val addImg: ImageView = findViewById(R.id.navCreate)
-
-        addImg.setOnClickListener {
-            val intent = Intent(this@SlamCollection_Activity, Slam_Activity::class.java)
-
-            startActivity(intent)
-        }
-
-
-        val gotoUser: ImageView = findViewById(R.id.navUser)
-
-        gotoUser.setOnClickListener {
-            val intent = Intent(this@SlamCollection_Activity, User_Activity::class.java)
-
-            startActivity(intent)
-        }
-
-        val gotoHome: ImageView = findViewById(R.id.navHome)
+        val gotoHome: ImageView = findViewById(R.id.backImg)
 
         gotoHome.setOnClickListener {
             val intent = Intent(this@SlamCollection_Activity, Homepage_Activity::class.java)
 
             startActivity(intent)
         }
-
     }
 }
