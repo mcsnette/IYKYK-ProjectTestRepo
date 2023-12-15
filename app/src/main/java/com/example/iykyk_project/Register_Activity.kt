@@ -85,7 +85,6 @@ class Register_Activity : AppCompatActivity() {
 
         //create unique ID
         //val RegUserID = DbRef.push().key
-        //val RegFinalUserID = RegUserID.toString()
 
         val RegUserID = firebaseAuth.currentUser?.uid.toString()
 
