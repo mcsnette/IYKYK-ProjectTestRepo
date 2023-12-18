@@ -59,7 +59,7 @@ class Register_Activity : AppCompatActivity() {
             }
 
             else{
-                Toast.makeText(this@Register_Activity, "fill up the damn form! *nagdabog*",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Register_Activity, "fill up the fields",Toast.LENGTH_SHORT).show()
             }
 
         }
@@ -89,7 +89,7 @@ class Register_Activity : AppCompatActivity() {
         val RegUserID = firebaseAuth.currentUser?.uid.toString()
 
         if (RegEmail.isEmpty() || RegPassword.isEmpty() || RegUsername.isEmpty()){
-            Toast.makeText(this@Register_Activity, "Boi, complete the damn form! >:(",Toast.LENGTH_SHORT).show()
+            Toast.makeText(this@Register_Activity, "complete the form",Toast.LENGTH_SHORT).show()
         }
 
         val User = UserData(RegUserID,RegEmail,RegUsername,RegPassword)
@@ -100,7 +100,7 @@ class Register_Activity : AppCompatActivity() {
             }
 
             .addOnFailureListener {
-                Toast.makeText(this@Register_Activity, "Oops, There is an error on our end mb hehe",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@Register_Activity, "Oops, There is an error on our end",Toast.LENGTH_SHORT).show()
             }
 
     }

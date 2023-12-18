@@ -50,7 +50,7 @@ class ForgetPassword_Activity : AppCompatActivity() {
             }
 
             else{
-                Toast.makeText(this@ForgetPassword_Activity, "Fill up the damn email!! *nagdabog*",Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@ForgetPassword_Activity, "Fill up the required forms",Toast.LENGTH_SHORT).show()
             }
 
 
