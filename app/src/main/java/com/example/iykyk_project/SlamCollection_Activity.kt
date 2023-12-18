@@ -95,7 +95,7 @@ class SlamCollection_Activity : AppCompatActivity() {
                                     )
                                     val userKey = userSnapshot.key
                                     intent.putExtra(
-                                        "key",
+                                        "uid",
                                         userKey
                                     ) // Pass the userKey to the next activity
                                     startActivity(intent)
