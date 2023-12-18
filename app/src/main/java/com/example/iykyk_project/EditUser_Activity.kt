@@ -69,20 +69,20 @@ class EditUser_Activity : AppCompatActivity() {
         if(UpdateUsername.isEmpty()){
             var NameUpdate = mapOf<String,String>("fullname" to  UpdateName)
             userRef.updateChildren(NameUpdate).addOnSuccessListener {
-                Toast.makeText(this@EditUser_Activity, "yo name is updated boi", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@EditUser_Activity, "Name is updated Successfully", Toast.LENGTH_SHORT).show()
             }
 
         }
         else if(UpdateName.isEmpty()){
             var UsernameUpdate = mapOf<String,String>("username" to  UpdateUsername)
             userRef.updateChildren(UsernameUpdate).addOnSuccessListener {
-                Toast.makeText(this@EditUser_Activity, "yo username is updated boi", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@EditUser_Activity, "Username is updated successfully", Toast.LENGTH_SHORT).show()
             }
         }
         else{
             var BothUpdate = mapOf<String,String>("fullname" to  UpdateName, "username" to  UpdateUsername)
             userRef.updateChildren(BothUpdate).addOnSuccessListener {
-                Toast.makeText(this@EditUser_Activity, "Both things are updated boi", Toast.LENGTH_SHORT).show()
+                Toast.makeText(this@EditUser_Activity, "Both Fields are updated successfully", Toast.LENGTH_SHORT).show()
             }
         }
 
