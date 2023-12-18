@@ -26,7 +26,6 @@ class ViewSlam_Activity : AppCompatActivity() {
         setContentView(binding.root)
 
         val btnBack: ImageView = findViewById(R.id.backImg)
-        val btnEdit: ImageView = findViewById(R.id.editImg)
         val btnDelete: ImageView = findViewById(R.id.deleteImg)
 
         val intent = intent.getStringExtra("uid")
@@ -62,10 +61,7 @@ class ViewSlam_Activity : AppCompatActivity() {
 
 
 
-        btnEdit.setOnClickListener {
-            // Implement edit functionality here
-            // You can navigate to the edit screen with the selected slam data
-        }
+
     }
 
     private fun readData(userID: String) {

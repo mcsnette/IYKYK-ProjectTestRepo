@@ -19,7 +19,7 @@
         android:contentInsetRight="0dp"
         android:minHeight="?attr/actionBarSize"
         android:elevation="4dp"
-        app:logo="@drawable/logoa"
+        app:logo="@drawable/logo_home"
         tools:ignore="MissingConstraints"
         tools:layout_editor_absoluteX="-29dp"
         tools:layout_editor_absoluteY="-1dp"></androidx.appcompat.widget.Toolbar>
