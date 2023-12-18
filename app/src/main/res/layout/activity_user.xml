@@ -4,22 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_slam"
+    android:background="@drawable/homepagebg"
     tools:context=".User_Activity">
 
 
-    <ImageView
-        android:id="@+id/logoHome"
-        android:layout_width="242dp"
-        android:layout_height="95dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/logo_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:contentInsetLeft="0dp"
+        android:contentInsetRight="0dp"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="4dp"
+        app:logo="@drawable/logoa"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-29dp"
+        tools:layout_editor_absoluteY="-1dp"></androidx.appcompat.widget.Toolbar>
 
 
     <TextView
@@ -93,5 +95,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navmenu"
+        app:itemIconTint="@drawable/bottom_navigation_selector"
         app:itemIconSize="30dp"/>
 </androidx.constraintlayout.widget.ConstraintLayout>

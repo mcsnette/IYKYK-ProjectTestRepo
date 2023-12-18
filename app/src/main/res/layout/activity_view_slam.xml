@@ -40,7 +40,7 @@
             app:layout_constraintTop_toTopOf="parent" />
 
 
-        <TextView
+        <EditText
             android:id="@+id/GetAnswer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"

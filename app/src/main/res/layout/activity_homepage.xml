@@ -5,49 +5,34 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_home"
+    android:background="@drawable/bgbg"
     tools:context=".Homepage_Activity">
 
 
-    <ImageView
-        android:id="@+id/logoHome"
-        android:layout_width="242dp"
-        android:layout_height="95dp"
-        android:layout_centerHorizontal="true"
-        android:layout_centerVertical="true"
-        android:layout_marginTop="4dp"
-        android:src="@drawable/logo_home"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.508"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="70dp"
+        android:layout_gravity="center"
+        android:background="@color/white"
+        android:contentInsetLeft="0dp"
+        android:contentInsetRight="0dp"
+        android:minHeight="?attr/actionBarSize"
+        android:elevation="4dp"
+        app:logo="@drawable/logoa"
+        tools:ignore="MissingConstraints"
+        tools:layout_editor_absoluteX="-29dp"
+        tools:layout_editor_absoluteY="-1dp"></androidx.appcompat.widget.Toolbar>
 
     <ImageView
         android:id="@+id/slamCollect"
-        android:layout_width="328dp"
-        android:layout_height="231dp"
+        android:layout_width="431dp"
+        android:layout_height="269dp"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
-        android:layout_marginTop="372dp"
-        android:src="@drawable/custom_shape_white"
+        android:layout_marginTop="112dp"
+        android:src="@drawable/slam_cover"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txtSlamCollection"
-        android:layout_width="200dp"
-        android:layout_height="112dp"
-        android:layout_marginTop="434dp"
-        android:fontFamily="@font/gotham"
-        android:gravity="center"
-        android:text="Slambook\nCollection"
-        android:lineSpacingExtra="9dp"
-        android:textColor="#000000"
-        android:textSize="30sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
@@ -60,17 +45,17 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/bottom_navmenu"
+        app:itemIconTint="@drawable/bottom_navigation_selector"
         app:itemIconSize="30dp"/>
 
     <VideoView
         android:id="@+id/videoView"
-        android:layout_width="325dp"
-        android:layout_height="208dp"
+        android:layout_width="431dp"
+        android:layout_height="269dp"
         android:layout_marginTop="32dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.511"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/logoHome" />
+        app:layout_constraintTop_toBottomOf="@+id/slamCollect" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

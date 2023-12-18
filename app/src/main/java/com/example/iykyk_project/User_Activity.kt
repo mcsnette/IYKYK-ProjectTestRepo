@@ -32,8 +32,21 @@ class User_Activity : AppCompatActivity() {
         databaseReference = FirebaseDatabase.getInstance().getReference("Users")
         loadUserDetails()
 
+        //button listeners
+        binding.editprofileBtn.setOnClickListener(){
+            val intent = Intent(this@User_Activity, EditUser_Activity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
+        binding.logoutBtn.setOnClickListener(){
+            firebaseAuth.signOut() // to make sure no UID will clash when logging in again
+            val intent = Intent(this@User_Activity, MainActivity::class.java)
+            startActivity(intent)
+            finish()
+        }
 
+        // navigation bar on the bottom
         val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
         bottomNavigationView.setOnNavigationItemSelectedListener { item ->
             when (item.itemId) {
@@ -61,6 +74,8 @@ class User_Activity : AppCompatActivity() {
         }
     }
 
+
+
     private fun loadUserDetails() {
         //db ref to fetch user info
         val userRef = databaseReference.child(Userid)
@@ -81,8 +96,6 @@ class User_Activity : AppCompatActivity() {
                 if (name.isNotEmpty()){
                     binding.getName.text = name
                 }
-
-
 
                 binding.passUsername.text = username
 

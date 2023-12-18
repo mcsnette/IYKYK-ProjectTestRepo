@@ -7,9 +7,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.ImageView
 import android.widget.VideoView
-import androidx.navigation.fragment.NavHostFragment
-import androidx.navigation.ui.setupWithNavController
 import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlin.random.Random
 
 class Homepage_Activity : AppCompatActivity() {
     @SuppressLint("MissingInflatedId")
@@ -18,9 +17,16 @@ class Homepage_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_homepage)
 
         val videoView = findViewById<VideoView>(R.id.videoView)
-        val path = "android.resource://" + packageName + "/" + R.raw.vid1
+        val videoResources = arrayOf(R.raw.vid1, R.raw.vid2, R.raw.vid3)
+        val randomIndex = Random.nextInt(videoResources.size)
+        val randomVideo = videoResources[randomIndex]
+        val path = "android.resource://" + packageName + "/" + randomVideo
         videoView.setVideoURI(Uri.parse(path))
         videoView.start()
+        videoView.setOnPreparedListener { it.isLooping = true }
+
+
+
 
         val slamCollect: ImageView = findViewById(R.id.slamCollect)
 
@@ -55,6 +61,9 @@ class Homepage_Activity : AppCompatActivity() {
             }
             true
         }
+
+
+
     }
 
 
