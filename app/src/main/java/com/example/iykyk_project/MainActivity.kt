@@ -61,14 +61,14 @@ class MainActivity : AppCompatActivity() {
                         startActivity(intent)
                         Toast.makeText(this, "You're goddamn right.", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this, "Username or Password is Incorrect", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Email or Password is Incorrect", Toast.LENGTH_SHORT).show()
                     }
             }
 
 
 
         }
-            else {Toast.makeText(this@MainActivity, "Fill up the damn fields",Toast.LENGTH_SHORT).show()
+            else {Toast.makeText(this@MainActivity, "Fill up all the fields",Toast.LENGTH_SHORT).show()
             }
     }
 
