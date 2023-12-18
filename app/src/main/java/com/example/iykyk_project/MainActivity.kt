@@ -59,15 +59,16 @@ class MainActivity : AppCompatActivity() {
                     if (it.isSuccessful){
                         val intent = Intent(this, Homepage_Activity::class.java)
                         startActivity(intent)
+                        Toast.makeText(this, "You're goddamn right.", Toast.LENGTH_SHORT).show()
                     } else {
-                        Toast.makeText(this, "HAHAHAHA MALI CREDENTIALS", Toast.LENGTH_SHORT).show()
+                        Toast.makeText(this, "Username or Password is Incorrect", Toast.LENGTH_SHORT).show()
                     }
             }
 
 
 
         }
-            else {Toast.makeText(this@MainActivity, "fill up the damn text fields! nagdabog",Toast.LENGTH_SHORT).show()
+            else {Toast.makeText(this@MainActivity, "Fill up the damn fields",Toast.LENGTH_SHORT).show()
             }
     }
 
@@ -96,4 +97,7 @@ class MainActivity : AppCompatActivity() {
         })
     }*/
     }
+
+
+
 }
