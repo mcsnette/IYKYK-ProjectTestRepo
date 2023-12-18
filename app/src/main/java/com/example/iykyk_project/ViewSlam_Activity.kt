@@ -33,6 +33,11 @@ class ViewSlam_Activity : AppCompatActivity() {
         if (intent != null) {
             readData(intent)
         }
+        btnDelete.setOnClickListener {
+            val intent = Intent(this@ViewSlam_Activity, Homepage_Activity::class.java)
+            startActivity(intent)
+            finish()
+        }
         btnBack.setOnClickListener {
             val intent = Intent(this@ViewSlam_Activity, Homepage_Activity::class.java)
             startActivity(intent)
@@ -51,6 +56,8 @@ class ViewSlam_Activity : AppCompatActivity() {
             if (nickname.isNotEmpty()) {
                 if (intent != null) {
                     deleteData(intent)
+                    val intent = Intent(this@ViewSlam_Activity, Homepage_Activity::class.java)
+                    startActivity(intent)
                 }
             } else {
                 Toast.makeText(this, "Can't find it", Toast.LENGTH_SHORT).show()

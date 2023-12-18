@@ -8,6 +8,7 @@ import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.bottomnavigation.BottomNavigationView
 import com.google.firebase.FirebaseApp
 import com.google.firebase.auth.FirebaseAuth
 import com.google.firebase.database.DataSnapshot
@@ -30,11 +31,25 @@ class SlamCollection_Activity : AppCompatActivity() {
         setContentView(R.layout.activity_slam_collection)
         FirebaseApp.initializeApp(this)
 
-        val gotoHome: ImageView = findViewById(R.id.backImg)
 
-        gotoHome.setOnClickListener {
-            val intent = Intent(this@SlamCollection_Activity, Homepage_Activity::class.java)
-            startActivity(intent)
+        val bottomNavigationView = findViewById<BottomNavigationView>(R.id.bottomNavigationView)
+        bottomNavigationView.setOnNavigationItemSelectedListener { item ->
+            when (item.itemId) {
+                R.id.home -> {
+                    val intent = Intent(this@SlamCollection_Activity, Homepage_Activity::class.java)
+                    startActivity(intent)
+                }
+
+                R.id.create -> {
+                    val intent = Intent(this@SlamCollection_Activity, Slam_Activity::class.java)
+                    startActivity(intent)
+                }
+                R.id.user -> {
+                    val intent = Intent(this@SlamCollection_Activity, User_Activity::class.java)
+                    startActivity(intent)
+                }
+            }
+            true
         }
 
         // Initialize slamDataList and RecyclerView
@@ -117,6 +132,7 @@ class SlamCollection_Activity : AppCompatActivity() {
     private fun Any.putExtra(s: String, userKey: Any?) {
 
 }
+
 }
 
 
