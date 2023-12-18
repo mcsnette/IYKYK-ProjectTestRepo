@@ -93,7 +93,7 @@
         android:layout_width="195dp"
         android:layout_height="48dp"
         android:layout_marginTop="536dp"
-        android:background="@drawable/custom_btn"
+        android:background="@drawable/custom_btn_pink"
         android:fontFamily="@font/sanchez"
         android:text="Register"
         android:textAllCaps="false"
