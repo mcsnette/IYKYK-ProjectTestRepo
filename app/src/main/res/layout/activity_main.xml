@@ -28,7 +28,7 @@
         android:background="@drawable/custom_field"
         android:ems="10"
         android:fontFamily="@font/poppins"
-        android:hint="password"
+        android:hint="Password"
         android:inputType="textPassword"
         android:lineSpacingExtra="14sp"
         android:paddingLeft="22dp"
